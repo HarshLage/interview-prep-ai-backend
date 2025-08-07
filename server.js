@@ -44,6 +44,10 @@ app.use("/api/ai/generate-explanation" , protect,generateConceptExplanation)
 app.use("/uploads",express.static(path.join(__dirname,"uploads"),{}))
 connectDB();
 
+app.get('/', (req, res) => {
+  res.send('Hello from Express on Vercel!');
+});
+
 const PORT = process.env.PORT || 5000
 // app.listen(PORT,()=> console.log(`Server running on port ${PORT}`))
 
